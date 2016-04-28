@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<browserconfig>
+  <msapplication>
+    <tile>
+      <% @tiles.each do |name, path| %>
+        <<%= name %> src="<%= asset_path(path) %>"/>
+      <% end %>
+      <% if @tile_color %>
+        <TileColor><%= @tile_color %></TileColor>
+      <% end %>
+    </tile>
+  </msapplication>
+</browserconfig>
