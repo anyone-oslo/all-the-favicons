@@ -7,7 +7,22 @@ module AllTheFavicons
         Rails.root.join("app", "assets", "favicons")
       end
 
-      def dimensions(str)
+      def content_type(str)
+        case File.extname(str.downcase)
+        when ".gif"
+          "image/gif"
+        when ".ico"
+          "image/x-icon"
+        when ".svg"
+          "image/svg+xml"
+        when ".png"
+          "image/png"
+        when ".jpg", ".jpeg"
+          "image/jpeg"
+        end
+      end
+
+   def dimensions(str)
         Vector2d.parse(str.match(/\d+x\d+/)[0]).to_i_vector
       end
 
