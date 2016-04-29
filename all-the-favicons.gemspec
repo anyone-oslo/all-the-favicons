@@ -12,8 +12,8 @@ Gem::Specification.new do |s|
   s.authors     = ["Inge Jørgensen"]
   s.email       = ["inge@kord.no"]
   s.homepage    = "https://github.com/kord-as/all-the-favicons"
-  s.summary     = "Rails engine for favicons"
-  s.description = "Rails engine that outputs favicons through the assets " \
+  s.summary     = "Favicons for the Rails assets pipeline"
+  s.description = "A Rails engine that outputs favicons through the assets " \
                   "pipeline"
   s.license     = "MIT"
 
