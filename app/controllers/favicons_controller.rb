@@ -11,6 +11,10 @@ class FaviconsController < ActionController::Base
     }.to_json
   end
 
+  def favicon
+    redirect_to asset_path("favicon.ico")
+  end
+
   private
 
   def android_icon(icon)
