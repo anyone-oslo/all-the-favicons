@@ -22,14 +22,29 @@ module AllTheFavicons
         end
       end
 
-   def dimensions(str)
+      def density(str)
+        dimensions(str).x / 48.0
+      end
+
+      def dimensions(str)
         Vector2d.parse(str.match(/\d+x\d+/)[0]).to_i_vector
       end
 
-      def files
+      def files(expr = nil)
         return [] unless File.exist?(assets_root)
-        Dir.entries(assets_root)
-           .select { |f| f =~ /\.(jpg|jpeg|png|gif|ico|svg)$/ }
+        files = Dir.entries(assets_root)
+                   .select { |f| f =~ /\.(jpg|jpeg|png|gif|ico|svg)$/ }
+        return files unless expr
+        files.select { |f| f =~ expr }
+      end
+
+      def icon(f)
+        {
+          src: f,
+          sizes: dimensions(f).to_s,
+          type: content_type(f),
+          density: density(f)
+        }
       end
     end
   end

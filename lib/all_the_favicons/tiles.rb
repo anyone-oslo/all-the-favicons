@@ -2,11 +2,22 @@ module AllTheFavicons
   class Tiles < AllTheFavicons::Base
     class << self
       def all
-        files.select { |f| f =~ /^mstile/ }
-             .map { |f| [tile_name(f), f] }
+        files(/^mstile/).map { |f| ms_icon(f) }
+      end
+
+      def tile_image
+        files(/^mstile-144x144/).first
+      end
+
+      def tile_image?
+        tile_image ? true : false
       end
 
       private
+
+      def ms_icon(f)
+        icon(f).merge(name: tile_name(f))
+      end
 
       def square?(v)
         v.x == v.y

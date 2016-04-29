@@ -2,8 +2,8 @@
 <browserconfig>
   <msapplication>
     <tile>
-      <% @tiles.each do |name, path| %>
-        <<%= name %> src="<%= asset_path(path) %>"/>
+      <% @tiles.each do |icon| %>
+        <<%= icon[:name] %> src="<%= asset_path(icon[:src]) %>"/>
       <% end %>
       <% if @tile_color %>
         <TileColor><%= @tile_color %></TileColor>
