@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    all-the-favicons (0.5.1)
+    all-the-favicons (0.5.2)
       rails (>= 4.2.0, < 5.1)
       vector2d (~> 2.2, >= 2.2.1)
 
