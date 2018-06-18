@@ -22,11 +22,20 @@ module AllTheFavicons
         end
       end
 
+      def default_size
+        raise "Default size missing"
+      end
+
       def density(str)
         dimensions(str).x / 48.0
       end
 
+      def dimensions?(str)
+        str.match?(/\d+x\d+/)
+      end
+
       def dimensions(str)
+        return default_size unless dimensions?(str)
         Vector2d.parse(str.match(/\d+x\d+/)[0]).to_i_vector
       end
 

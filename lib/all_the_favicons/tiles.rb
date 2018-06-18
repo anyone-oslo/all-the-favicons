@@ -6,7 +6,7 @@ module AllTheFavicons
       end
 
       def tile_image
-        files(/^mstile-144x144/).first
+        files(/^mstile-/).first
       end
 
       def tile_image?
@@ -14,6 +14,10 @@ module AllTheFavicons
       end
 
       private
+
+      def default_size
+        Vector2d.new(150, 150)
+      end
 
       def ms_icon(f)
         icon(f).merge(name: tile_name(f))

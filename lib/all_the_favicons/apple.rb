@@ -2,7 +2,11 @@ module AllTheFavicons
   class Apple < AllTheFavicons::Base
     class << self
       def all
-        files(/^apple.*\d+x\d+/).map { |f| icon(f) }
+        files(/^apple-.*/).map { |f| icon(f) }
+      end
+
+      def default_size
+        Vector2d.new(180, 180)
       end
 
       def pinned_tab_icon
