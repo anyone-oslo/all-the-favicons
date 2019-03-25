@@ -30,8 +30,10 @@ You can configure colors by adding an initializer (ie
 
 ``` ruby
 AllTheFavicons.name = "MyApp" # For the Android Chrome manifest
+AllTheFavicons.short_name = "MyApp"
 AllTheFavicons.ms_tile_color = "#2d89ef"
 AllTheFavicons.pinned_tab_color = "#000000"
+AllTheFavicons.background_color = "#ffffff"
 AllTheFavicons.theme_color = "#ffffff"
 ```
 

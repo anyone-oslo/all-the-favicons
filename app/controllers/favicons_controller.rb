@@ -5,10 +5,7 @@ class FaviconsController < ActionController::Base
   end
 
   def manifest
-    render json: {
-      name: AllTheFavicons.name,
-      icons: AllTheFavicons::Android.all.map { |i| android_icon(i) }
-    }.to_json
+    render json: manifest_data.to_json
   end
 
   def favicon
@@ -16,6 +13,15 @@ class FaviconsController < ActionController::Base
   end
 
   private
+
+  def manifest_data
+    { name: AllTheFavicons.name,
+      short_name: AllTheFavicons.short_name,
+      background_color: AllTheFavicons.background_color,
+      theme_color: AllTheFavicons.theme_color,
+      icons: AllTheFavicons::Android.all.map { |i| android_icon(i) },
+      display: "standalone" }
+  end
 
   def android_icon(icon)
     icon.merge(src: asset_path(icon[:src]))

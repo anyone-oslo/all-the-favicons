@@ -3,5 +3,7 @@ Rails.application.routes.draw do
       defaults: { format: "xml" })
   get("/manifest.json" => "favicons#manifest",
       defaults: { format: "json" }, as: "favicons_manifest")
+  get("/site.webmanifest" => "favicons#manifest",
+      defaults: { format: "json" }, as: "favicons_webmanifest")
   get("favicon.ico" => "favicons#favicon")
 end

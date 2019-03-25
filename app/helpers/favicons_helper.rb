@@ -1,7 +1,7 @@
 module FaviconsHelper
   def all_the_favicons
     icons = apple_favicons + standard_favicons + [
-      tag(:link, rel: "manifest", href: favicons_manifest_path),
+      tag(:link, rel: "manifest", href: favicons_webmanifest_path),
       pinned_tab_favicon,
       tag(:meta,
           name: "msapplication-TileColor",

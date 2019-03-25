@@ -12,7 +12,12 @@ require "all_the_favicons/version"
 
 module AllTheFavicons
   class << self
-    attr_accessor :ms_tile_color, :name, :pinned_tab_color, :theme_color
+    attr_accessor :background_color, :ms_tile_color, :name,
+                  :pinned_tab_color, :theme_color, :short_name
+
+    def background_color
+      @background_color || "#ffffff"
+    end
 
     def ms_tile_color
       @ms_tile_color || "#2d89ef"
@@ -20,6 +25,10 @@ module AllTheFavicons
 
     def name
       @name || Rails.application.class.parent_name
+    end
+
+    def short_name
+      @short_name || name
     end
 
     def pinned_tab_color
