@@ -24,8 +24,8 @@ Gem::Specification.new do |s|
     "README.md"
   ]
 
-  s.required_ruby_version = ">= 1.9.2"
+  s.required_ruby_version = ">= 3.1.0"
 
-  s.add_dependency "rails", ">= 4.2.0"
+  s.add_dependency "rails", ">= 6.1.0"
   s.add_dependency "vector2d", "~> 2.2", ">= 2.2.1"
 end

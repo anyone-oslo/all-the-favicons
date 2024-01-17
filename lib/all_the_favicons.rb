@@ -24,7 +24,7 @@ module AllTheFavicons
     end
 
     def name
-      @name || Rails.application.class.parent_name
+      @name || Rails.application.class.module_parent_name
     end
 
     def short_name
