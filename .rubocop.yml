@@ -1,0 +1,56 @@
+plugins:
+  - rubocop-rails
+
+inherit_from:
+  - .rubocop_todo.yml
+
+AllCops:
+  NewCops: enable
+  TargetRubyVersion: 3.4
+  Exclude:
+    - "spec/internal/db/schema.rb"
+    - 'node_modules/**/*'
+    - 'vendor/**/*'
+
+Metrics/AbcSize:
+  Exclude:
+    - "db/migrate/*"
+
+Metrics/BlockLength:
+  Exclude:
+    - "*.gemspec"
+    - "**/*_spec.rb"
+    - "**/*.builder"
+    - "config/routes.rb"
+    - "spec/factories/**/*.rb"
+    - "spec/rails_helper.rb"
+
+Metrics/ClassLength:
+  Exclude:
+    - "db/migrate/*"
+
+Naming/FileName:
+  Exclude:
+    - "lib/all-the-favicons.rb"
+
+Style/AsciiComments:
+  Enabled: false
+
+Style/Documentation:
+  Enabled: false
+
+Style/FormatStringToken:
+  Exclude:
+    - "config/routes.rb"
+
+Style/StringLiterals:
+  EnforcedStyle: double_quotes
+
+Layout/MultilineOperationIndentation:
+  EnforcedStyle: aligned
+
+Rails:
+  Enabled: true
+
+Rails/ApplicationRecord:
+  Enabled: false

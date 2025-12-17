@@ -1,25 +1,25 @@
+# frozen_string_literal: true
+
 module AllTheFavicons
   class Base
     class << self
       private
 
       def assets_root
-        Rails.root.join("app", "assets", "favicons")
+        Rails.root.join("app/assets/favicons")
       end
 
       def content_type(str)
-        case File.extname(str.downcase)
-        when ".gif"
-          "image/gif"
-        when ".ico"
-          "image/x-icon"
-        when ".svg"
-          "image/svg+xml"
-        when ".png"
-          "image/png"
-        when ".jpg", ".jpeg"
-          "image/jpeg"
-        end
+        content_types[File.extname(str.downcase)]
+      end
+
+      def content_types
+        { ".gif" => "image/gif",
+          ".ico" => "image/x-icon",
+          ".svg" => "image/svg+xml",
+          ".png" => "image/png",
+          ".jpg" => "image/jpeg",
+          ".jpeg" => "image/jpeg" }
       end
 
       def default_size
@@ -36,24 +36,25 @@ module AllTheFavicons
 
       def dimensions(str)
         return default_size unless dimensions?(str)
+
         Vector2d.parse(str.match(/\d+x\d+/)[0]).to_i_vector
       end
 
       def files(expr = nil)
         return [] unless File.exist?(assets_root)
+
         files = Dir.entries(assets_root)
-                   .select { |f| f =~ /\.(jpg|jpeg|png|gif|ico|svg)$/ }
+                   .grep(/\.(jpg|jpeg|png|gif|ico|svg)$/)
         return files unless expr
-        files.select { |f| f =~ expr }
+
+        files.grep(expr)
       end
 
-      def icon(f)
-        {
-          src: f,
-          sizes: dimensions(f).to_s,
-          type: content_type(f),
-          density: density(f)
-        }
+      def icon(name)
+        { src: name,
+          sizes: dimensions(name).to_s,
+          type: content_type(name),
+          density: density(name) }
       end
     end
   end

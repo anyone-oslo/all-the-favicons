@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module AllTheFavicons
   class Tiles < AllTheFavicons::Base
     class << self
@@ -19,18 +21,16 @@ module AllTheFavicons
         Vector2d.new(150, 150)
       end
 
-      def ms_icon(f)
-        icon(f).merge(name: tile_name(f))
+      def ms_icon(name)
+        icon(name).merge(name: tile_name(name))
       end
 
-      def square?(v)
-        v.x == v.y
+      def square?(vector)
+        vector.x == vector.y
       end
 
-      def tile_name(f)
-        (square?(dimensions(f)) ? "square" : "wide") +
-          dimensions(f).to_s +
-          "logo"
+      def tile_name(name)
+        "#{square?(dimensions(name)) ? 'square' : 'wide'}#{dimensions(name)}logo"
       end
     end
   end

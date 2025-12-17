@@ -1,4 +1,6 @@
-class FaviconsController < ActionController::Base
+# frozen_string_literal: true
+
+class FaviconsController < ApplicationController
   def browserconfig
     @tile_color = AllTheFavicons.ms_tile_color
     @tiles = AllTheFavicons::Tiles.all

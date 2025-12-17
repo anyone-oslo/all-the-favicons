@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module AllTheFavicons
   class Apple < AllTheFavicons::Base
     class << self

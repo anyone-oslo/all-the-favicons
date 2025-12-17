@@ -1,4 +1,4 @@
-# encoding: utf-8
+# frozen_string_literal: true
 
 require "vector2d"
 
@@ -12,8 +12,8 @@ require "all_the_favicons/version"
 
 module AllTheFavicons
   class << self
-    attr_accessor :background_color, :ms_tile_color, :name,
-                  :pinned_tab_color, :theme_color, :short_name
+    attr_writer :background_color, :ms_tile_color, :name,
+                :pinned_tab_color, :theme_color, :short_name
 
     def background_color
       @background_color || "#ffffff"

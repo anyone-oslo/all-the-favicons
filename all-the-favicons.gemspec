@@ -1,6 +1,6 @@
-# encoding: utf-8
+# frozen_string_literal: true
 
-$LOAD_PATH.push File.expand_path("../lib", __FILE__)
+$LOAD_PATH.push File.expand_path("lib", __dir__)
 
 # Maintain your gem's version:
 require "all_the_favicons/version"
@@ -24,8 +24,9 @@ Gem::Specification.new do |s|
     "README.md"
   ]
 
-  s.required_ruby_version = ">= 3.1.0"
+  s.required_ruby_version = ">= 3.4.0"
 
   s.add_dependency "rails", ">= 6.1.0"
   s.add_dependency "vector2d", "~> 2.2", ">= 2.2.1"
+  s.metadata["rubygems_mfa_required"] = "true"
 end
