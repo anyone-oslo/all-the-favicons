@@ -10,8 +10,8 @@ Gem::Specification.new do |s|
   s.name        = "all-the-favicons"
   s.version     = AllTheFavicons::VERSION
   s.authors     = ["Inge Jørgensen"]
-  s.email       = ["inge@kord.no"]
-  s.homepage    = "https://github.com/kord-as/all-the-favicons"
+  s.email       = ["inge@anyone.no"]
+  s.homepage    = "https://github.com/anyone-oslo/all-the-favicons"
   s.summary     = "Favicons for the Rails assets pipeline"
   s.description = "A Rails engine that outputs favicons through the assets " \
                   "pipeline"
