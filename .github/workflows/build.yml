@@ -3,7 +3,6 @@ on:
   push:
     branches:
       - main
-      - master
   pull_request:
 permissions:
   contents: write
@@ -25,7 +24,7 @@ jobs:
 
   release-please:
     needs: [rubocop-test]
-    if: github.ref == 'refs/heads/main' || github.ref == 'refs/heads/master'
+    if: github.ref == 'refs/heads/main'
     runs-on: ubuntu-latest
     outputs:
       release_created: ${{ steps.release.outputs.release_created }}
