@@ -1,0 +1,10 @@
+{
+  "$schema": "https://raw.githubusercontent.com/googleapis/release-please/main/schemas/config.json",
+  "packages": {
+    ".": {
+      "release-type": "ruby",
+      "package-name": "all-the-favicons",
+      "version-file": "lib/all_the_favicons/version.rb"
+    }
+  }
+}
