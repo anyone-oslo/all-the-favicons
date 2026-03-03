@@ -82,6 +82,8 @@ GEM
       securerandom (>= 0.3)
       tzinfo (~> 2.0, >= 2.0.5)
       uri (>= 0.13.1)
+    addressable (2.8.9)
+      public_suffix (>= 2.0.2, < 8.0)
     ast (2.4.3)
     base64 (0.3.0)
     bigdecimal (4.0.1)
@@ -108,6 +110,9 @@ GEM
       rdoc (>= 4.0.0)
       reline (>= 0.4.2)
     json (2.18.1)
+    json-schema (6.1.0)
+      addressable (~> 2.8)
+      bigdecimal (>= 3.1, < 5)
     language_server-protocol (3.17.0.5)
     lint_roller (1.1.0)
     logger (1.7.0)
@@ -121,6 +126,8 @@ GEM
       net-pop
       net-smtp
     marcel (1.1.0)
+    mcp (0.8.0)
+      json-schema (>= 4.1)
     method_source (1.1.0)
     mini_mime (1.1.5)
     minitest (6.0.1)
@@ -172,6 +179,7 @@ GEM
     psych (5.3.1)
       date
       stringio
+    public_suffix (7.0.2)
     racc (1.8.1)
     rack (3.2.5)
     rack-session (2.1.1)
@@ -220,10 +228,11 @@ GEM
     regexp_parser (2.11.3)
     reline (0.6.3)
       io-console (~> 0.5)
-    rubocop (1.84.2)
+    rubocop (1.85.0)
       json (~> 2.3)
       language_server-protocol (~> 3.17.0.2)
       lint_roller (~> 1.1.0)
+      mcp (~> 0.6)
       parallel (~> 1.10)
       parser (>= 3.3.0.2)
       rainbow (>= 2.2.2, < 4.0)
