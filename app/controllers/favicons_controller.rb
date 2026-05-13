@@ -1,6 +1,10 @@
 # frozen_string_literal: true
 
 class FaviconsController < ApplicationController
+  rescue_from "Propshaft::MissingAssetError",
+              "Sprockets::Rails::Helper::AssetNotFound",
+              with: :asset_not_found
+
   def browserconfig
     @tile_color = AllTheFavicons.ms_tile_color
     @tiles = AllTheFavicons::Tiles.all
@@ -31,5 +35,9 @@ class FaviconsController < ApplicationController
 
   def asset_path(path)
     ActionController::Base.helpers.asset_path(path)
+  end
+
+  def asset_not_found
+    head :not_found
   end
 end
