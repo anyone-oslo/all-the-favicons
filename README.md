@@ -1,3 +1,6 @@
+[![Version](https://img.shields.io/gem/v/all-the-favicons.svg?style=flat)](https://rubygems.org/gems/all-the-favicons)
+[![Build](https://github.com/anyone-oslo/all-the-favicons/actions/workflows/build.yml/badge.svg)](https://github.com/anyone-oslo/all-the-favicons/actions/workflows/build.yml)
+
 # All The Favicons
 
 The favicon sitation is getting out of hand. 25+ variants?
@@ -37,7 +40,14 @@ AllTheFavicons.background_color = "#ffffff"
 AllTheFavicons.theme_color = "#ffffff"
 ```
 
+## Contributing
+
+Bug reports and pull requests are welcome on
+[GitHub](https://github.com/anyone-oslo/all-the-favicons). See
+[CONTRIBUTING.md](CONTRIBUTING.md) for how to get set up and how
+commits are formatted, and note that this project ships with a
+[code of conduct](CODE_OF_CONDUCT.md).
+
 ## License
 
-all-the-favicons is licensed under the
-[MIT License](http://www.opensource.org/licenses/MIT).
+Released under the [MIT License](MIT-LICENSE).

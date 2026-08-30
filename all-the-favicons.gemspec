@@ -28,5 +28,11 @@ Gem::Specification.new do |s|
 
   s.add_dependency "rails", ">= 6.1.0"
   s.add_dependency "vector2d", "~> 2.2", ">= 2.2.1"
-  s.metadata["rubygems_mfa_required"] = "true"
+  s.metadata = {
+    "bug_tracker_uri" => "https://github.com/anyone-oslo/all-the-favicons/issues",
+    "changelog_uri" => "https://github.com/anyone-oslo/all-the-favicons/blob/main/CHANGELOG.md",
+    "documentation_uri" => "https://www.rubydoc.info/gems/all-the-favicons",
+    "rubygems_mfa_required" => "true",
+    "source_code_uri" => "https://github.com/anyone-oslo/all-the-favicons"
+  }
 end
